@@ -195,64 +195,66 @@ div.dt-calendar table {
 	background: #fff;
 }
 
-div.dt-calendar td {
-	background: transparent;
-	border: 1px solid #d3dce2;
-	border-bottom-style: none;
-	color: #2f77eb;
-	cursor: pointer;
-	height: 30px;
-	text-align: center;
-	vertical-align: middle;
-	padding: 0!important;
-	width: 35px;
-	text-shadow: none;
-}
-
-div.dt-calendar thead td,
+/* div.dt-calendar thead td,
 div.dt-calendar thead td:first-child,
 div.dt-calendar thead td:last-child {
 	background: transparent;
 	border: none;
 	height: 30px;
 	color: #2f77eb;
-}
+} */
 
 div.dt-calendar td.last,
 div.dt-calendar td.next {
-	color: #d3dce2;
+	color: var(--color-main-lightest);
 }
 
 div.dt-calendar td.today {
-	background: #f4f8fb;
+	background: var(--color-accent-alt-light);
 }
 
 div.dt-calendar td.selected {
-	color: #fff;
-	background: #2f77eb;
+	color: var(--color-clear);
+	background: var(--color-accent);
 }
 
 div.dt-calendar tbody td:hover {
-	background: #2f77eb!important;
-	color: #fff;
+	background: var(--color-accent) !important;
+	color: var(--color-clear);
 }
 
 div.dt-calendar thead {
-	display: table-header-group!important;
+	background-color: transparent;
+	box-shadow: none;
 }
 
 div.dt-calendar tr {
-	display: table-row!important;
+	background-color: transparent;
+	box-shadow: none;
+	border-radius: 0;
+	padding: 0;
+	margin: 0;
 }
 
+
 div.dt-calendar td {
-	display: table-cell!important;
+	background: transparent;
+	box-sizing: border-box;
+	border-bottom-style: none;
+	color: var(--color-accent);
+	cursor: pointer;
+	height: 30px;
+	text-shadow: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
 }
 
 /* Ordering */
 
 li.ordering div.dt-calendar nav {
-	border-bottom-color: #3c5c8c;
+	border-bottom-color: var(--color-main);
 }
 
 li.ordering div.dt-calendar nav a {
@@ -260,12 +262,12 @@ li.ordering div.dt-calendar nav a {
 }
 
 li.ordering div.dt-calendar td {
-	border: 1px solid #44689e;
+	border: 1px solid var(--color-main);
 }
 
 li.ordering div.dt-calendar thead td {
 	border: none;
-	color: #3c5c8c;
+	color: var(--color-main);
 }
 
 li.ordering div.dt-calendar tbody td:first-child,
