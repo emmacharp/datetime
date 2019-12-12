@@ -5,30 +5,13 @@
  * @source: http://github.com/nilshoerrmann/datetime
  */
 
-/* Overflow fix */
-html {
-	overflow-y: scroll;
-}
-
-.field-datetime {
-	position: relative;
-}
-
-.field-datetime + .field {
-	clear: both;
-}
-
-.field-datetime label {
-	position: static;
-	margin-bottom: 1rem;
-}
 
 .field-datetime .frame {
-	overflow: visible;
+/*	overflow: visible;
 	margin-top: 1rem;
 	margin-bottom: 3rem;
 	padding: 0;
-	width: 100%;
+	width: 100%;*/
 	background-color: var(--color-clear);
 }
 
@@ -115,9 +98,9 @@ html {
 }
 
 /* Multiple */
-.field-datetime .frame.multiple {
+/*.field-datetime .frame.multiple {
 	margin-bottom: 8.8rem;
-}
+}*/
 
 .field-datetime .frame.multiple .frame-header {
 	padding: 0;
@@ -127,12 +110,12 @@ html {
 	margin-right: 1.5rem;
 }
 
-.field-datetime .frame.multiple .apply {
+/*.field-datetime .frame.multiple .apply {
 	float: none;
 	bottom: -6.2rem;
 	position: absolute;
 	right: 0;
-}
+}*/
 
 .field-datetime .frame.multiple .apply select {
 	display: none;

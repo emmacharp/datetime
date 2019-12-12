@@ -131,7 +131,7 @@
 						self::__createDateField($element, 'end', $end, $time) .
 				'	</div>
 				</header>
-				<div class="dt-calendar content">' .
+				<div class="dt-calendar calendar content">' .
 					self::__createCalendar() .
 					$cutter .
 				'</div>',
@@ -194,12 +194,12 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-						<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-						<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-						<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-						<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-						<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+						<tr><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td></tr>
+						<tr><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td></tr>
+						<tr><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td></tr>
+						<tr><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td></tr>
+						<tr><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td></tr>
+						<tr><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td></tr>
 					</tbody>
 				</table>
 			</div>';
@@ -481,7 +481,7 @@
 
 			// Field label
 			$fieldname = 'fields['  .$this->get('element_name') . ']';
-			$label = new XMLElement('label', $this->get('label') . '<i>' . ($this->get('required') == 'no' ? __('Optional') : '') . '</i>');
+			$label = new XMLElement('label', '<span>' . $this->get('label') . '</span><i>' . ($this->get('required') == 'no' ? __('Optional') : '') . '</i>');
 			$wrapper->appendChild($label);
 
 			// Get settings

@@ -65,7 +65,7 @@
 		});
 
 		// Choosing
-		dates.on('click.calendar', 'td', function(event) {
+		dates.on('click.calendar', 'td span', function(event) {
 			var cell = $(event.target),
 				calendar = cell.parents(settings.calendar),
 				timestamp = parseInt(cell.attr('data-timestamp'));
@@ -231,7 +231,7 @@
 			}
 		
 			// Set calendar days
-			calendar.find('tbody td').removeClass().each(function() {
+			calendar.find('tbody td span').removeClass().each(function() {
 				var cell = $(this),
 					date = new Date(year, month, day, 12, 0),
 					time = date.getTime(),
