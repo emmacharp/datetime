@@ -42,25 +42,24 @@
 			else {
 				
 				// Visualise time
-				visualise(timer, range);		
+				visualise(timer, range);
 
 				// Position timer
 				if(times.filter(':eq(0)').is(':hidden')) {
 					times.css('opacity', 0);
 				}
-				timer.slideDown('fast', function() {
-					timer.find('div.range').each(function() {
-						setTimerPosition($(this));
-						times.animate({
-							opacity: 1
-						});
+				timer.addClass('is-shown');
+				timer.find('div.range').each(function() {
+					setTimerPosition($(this));
+					times.animate({
+						opacity: 1
 					});
 				});
 			}
 		});
 		
 		// Hover
-		dates.on('mouseover.timer', 'div.timeline', function(event) {
+		dates.on('mousemove.timer', 'div.timeline', function(event) {
 			var timeline = $(this),
 				selected = getTime(timeline, event.pageX),
 				date = new Date(),
@@ -81,7 +80,7 @@
 			setPosition(selector, selected, selected);
 			selector.css('visibility', 'visible');
 		});
-		dates.on('mouseout.timer', settings.timer, function(event) {
+		dates.on('mouseleave.timer', settings.timer, function(event) {
 		
 			// Hide selector
 			selector.css('visibility', 'hidden');
@@ -191,7 +190,7 @@
 			// Range on single day
 			if(Symphony.DateTime.reduce(range.start) == Symphony.DateTime.reduce(range.end)) {
 				start.text(formatRange(from, to));
-				end.text('12:00');	
+				end.text('12:00');
 				
 				// Set timeline positions
 				setPosition(first, from, to);	
@@ -219,7 +218,7 @@
 				end.text('12:00');
 							
 				// Set timeline positions
-				setPosition(first, from, from);	
+				setPosition(first, from, from);
 				setPosition(last, { 
 					hours: 0,
 					minutes: 0
@@ -334,9 +333,8 @@
 				
 			// Slide down timeline
 			if(timeline.is(':hidden')) {
-				timeline.slideDown('fast', function() {
-					range.fadeIn();
-				});
+				timeline.addClass('is-shown');
+				range.fadeIn();
 				timer.find('div.timeline.start span.end').hide();
 			}
 		};
@@ -359,7 +357,7 @@
 				minutes = date.getMinutes(),
 				devider = ':';
 				
-			// Handle one-digit times	
+			// Handle one-digit times
 			if(minutes < 10) {
 				devider = ':0';
 			}
@@ -368,7 +366,7 @@
 			return {
 				time: hours.toString() + devider + minutes.toString(),
 				hours: hours,
-				minutes: minutes					
+				minutes: minutes
 			};
 		};
 		
