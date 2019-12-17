@@ -50,14 +50,6 @@
 			datetime.on('constructstop.duplicator constructshow.duplicator', 'li', function(event) {
 				var item = $(this),
 					destructor = item.find('a.destructor');
-					
-				if(width < 1) {
-					width = destructor.width();
-				}
-			
-				if(width > 0) {
-					item.find('header div').css('margin-right', width + 10);
-				}
 			});
 		
 			// Constructing
@@ -120,7 +112,7 @@
 				if(range.start && range.end) {
 					validate(start, from, false);
 					validate(end, to, false);
-					end.slideDown('fast');
+					end.addClass('is-shown');
 					item.addClass('range');
 				}
 
@@ -369,15 +361,9 @@
 				
 				// Hide end date
 				if (end.is(':visible')) {
-					end.hide(); // hack to make events works
-					item.trigger('updatesize.collapsible');
-					item.trigger('setsize.collapsible');
 					end.attr('data-timestamp', '')
 					.val('')
-					.show()
-					.slideUp('fast', function() {
-						item.removeClass('range');
-					});
+					.show();
 				}
 			};
 			
@@ -415,16 +401,6 @@
 				}
 				else if(day - today == 1) {
 					label = Symphony.Language.get('tomorrow');
-				}
-				
-				// Attach label
-				if(label) {
-					input.next('em.label').text(label).fadeIn('fast');
-				}
-				
-				// Detach label
-				else {
-					input.next('em.label').fadeOut('fast');
 				}
 			};
 			
