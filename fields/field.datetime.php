@@ -174,12 +174,12 @@
 		private static function __createCalendar() {
 			return '<div class="date">
 				<nav>
-					<a class="previous">&#171;</a>
+					<a class="previous"></a>
 					<div class="switch">
 						<ul class="months"></ul>
 						<ul class="years"></ul>
 					</div>
-					<a class="next">&#187;</a>
+					<a class="next"></a>
 				</nav>
 				<table>
 					<thead>
@@ -468,16 +468,15 @@
 			}
 
 			// Datetime
-			Administration::instance()->Page->addScriptToHead(URL . '/extensions/datetime/assets/datetime.publish.js', 103, false);
-			Administration::instance()->Page->addStylesheetToHead(URL . '/extensions/datetime/assets/datetime.publish.css', 'screen', 104, false);
+			Administration::instance()->Page->addScriptToBody(URL . '/extensions/datetime/assets/datetime.publish.js', 103, false);
+			Administration::instance()->Page->addStylesheetToBody(URL . '/extensions/datetime/assets/datetime.publish.css', 'screen', 104, false);
 
 			// Calendar
-			Administration::instance()->Page->addStylesheetToHead(URL . '/extensions/datetime/assets/calendar.publish.css', 'screen', 105, false);
-			Administration::instance()->Page->addScriptToHead(URL . '/extensions/datetime/assets/calendar.publish.js', 106, false);
+			Administration::instance()->Page->addScriptToBody(URL . '/extensions/datetime/assets/calendar.publish.js', 106, false);
 
 			// Timer
-			Administration::instance()->Page->addStylesheetToHead(URL . '/extensions/datetime/assets/timer.publish.css', 'screen', 107, false);
-			Administration::instance()->Page->addScriptToHead(URL . '/extensions/datetime/assets/timer.publish.js', 108, false);
+			Administration::instance()->Page->addStylesheetToBody(URL . '/extensions/datetime/assets/timer.publish.css', 'screen', 107, false);
+			Administration::instance()->Page->addScriptToBody(URL . '/extensions/datetime/assets/timer.publish.js', 108, false);
 
 			// Field label
 			$fieldname = 'fields['  .$this->get('element_name') . ']';
