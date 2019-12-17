@@ -6,82 +6,75 @@
  */
 
 
+/* Apply relative positioning on label and children --------*/
+ .field.field-datetime label {
+ 	height: auto;
+ 	margin: 0;
+ 	padding: var(--standard-inner-rhythm);
+ 	background-color: var(--standard-field-background-color);
+ }
+
+ .field.field-datetime label>span {
+ 	top: auto;
+ }
+
+
 .field-datetime .frame {
-/*	overflow: visible;
-	margin-top: 1rem;
-	margin-bottom: 3rem;
-	padding: 0;
-	width: 100%;*/
-	background-color: var(--color-clear);
+	background-color: var(--standard-field-background-color);
+	border-radius: inherit;
 }
 
-.field-datetime .collapsible .instance:not(.collapsed):not(.js-animate) {
-	overflow: visible;
+.field-datetime .instance {
+	border-style: dashed;
+	border-color: var(--color-ui);
+	box-sizing: inherit;
+	width: inherit;
+	max-height: 0;
+	min-height: 0;
+	transition: max-height var(--duration) var(--ease-current);
+	overflow: hidden;
 }
 
-.field-datetime .frame ol {
-	margin: 0;
+.field-datetime .instance {
+	border-top-width: 1px;
 }
 
-.field-datetime .frame header {
-	padding: 4px 10px;
-	position: relative;
+.field-datetime .instance:last-child {
+	border-bottom-width: 1px;
+}
+
+.field-datetime .frame .apply {
+	background-color: var(--standard-field-background-color);
+	border-radius: inherit;
 }
 
 .field-datetime .frame header div {
 	flex-grow: 1;
 	position: relative;
-	border-radius: 2px;
+	display: flex;
+	margin-bottom: 1px;
 }
 
-.field-datetime header input,
-.field-datetime header input:hover,
-.field-datetime header input:active,
-.field-datetime header input:focus {
-	box-sizing: border-box;
-	box-shadow: none;
-	border-radius: 0;
-	margin: 0;
-	padding: 0 1rem!important;
-	border: none;
-	background: transparent;
-	height: 23px;
+.field-datetime .instance:not(.collapsed) .frame-header {
+	background-color: var(--color-accent-alt-light);
 }
 
-.field-datetime header input.end {
-	display: none;
-	padding-top: 7px;
-	padding-left: 22px;
-	border-top: 1px solid #E4E4DE;
-	background: transparent url(images/range.png) 10px 13px no-repeat;
+.field.field-datetime header input {
+	--standard-field-border-radius: 0;
+	--standard-field-border-color: transparent;
+	--standard-field-hover-border-color: transparent;
+	padding: var(--standard-inner-rhythm);
+	flex: 0% 1 1;
+	margin-bottom: -1px;
 }
 
-.field-datetime li.range header input.end {
-	display: block;
-	padding-left: 3rem!important;
+.field.field-datetime header input:focus {
+	flex-grow: 2;
 }
 
-.field-datetime .frame header a.destructor {
-	top: 9px;
-	right: 10px;
-	border: none;
-}
 
 .field-datetime header em.label {
-	position: absolute;
-	top: 0.5rem;
-	right: 1.5rem;
-	color: #657685;
-	font-size: 1.1rem;
-	text-transform: uppercase;
-	font-style: normal;
-	text-shadow: none;
-	margin-top: 0;
-	-webkit-transition: top 0.1s ease-out;
-	-moz-transition: top 0.1s ease-out;
-	-ms-transition: top 0.1s ease-out;
-	-o-transition: top 0.1s ease-out;
-	transition: top 0.1s ease-out;
+	display: none;
 }
 
 .field-datetime header em.end.label {
@@ -97,25 +90,10 @@
 	color: #cc3311;
 }
 
-/* Multiple */
-/*.field-datetime .frame.multiple {
-	margin-bottom: 8.8rem;
-}*/
-
-.field-datetime .frame.multiple .frame-header {
-	padding: 0;
+.field-datetime .destructor {
+	flex-shrink: 0;
+	margin-right: var(--standard-inner-rhythm);
 }
-
-.field-datetime .frame.multiple .destructor {
-	margin-right: 1.5rem;
-}
-
-/*.field-datetime .frame.multiple .apply {
-	float: none;
-	bottom: -6.2rem;
-	position: absolute;
-	right: 0;
-}*/
 
 .field-datetime .frame.multiple .apply select {
 	display: none;
