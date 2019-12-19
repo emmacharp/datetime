@@ -32,7 +32,6 @@
 	max-height: 0;
 	min-height: 0;
 	transition: max-height var(--duration) var(--ease-current);
-	overflow: hidden;
 }
 
 .field-datetime .instance {
@@ -52,7 +51,6 @@
 	flex-grow: 1;
 	position: relative;
 	display: flex;
-	margin-bottom: 1px;
 }
 
 .field-datetime .instance:not(.collapsed) .frame-header {
@@ -65,7 +63,7 @@
 	--standard-field-hover-border-color: transparent;
 	padding: var(--standard-inner-rhythm);
 	flex: 0% 1 1;
-	margin-bottom: -1px;
+	margin: 0;
 }
 
 .field.field-datetime header input:focus {
