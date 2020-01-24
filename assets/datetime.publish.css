@@ -66,11 +66,15 @@
 	margin: 0;
 }
 
-.field.field-datetime header input:focus {
+.field.field-datetime .frame:not(.range) header input.end {
+	display: none;
+}
+
+[id="secondary"] .field.field-datetime header input:focus {
 	flex-grow: 2;
 }
 
-
+/*
 .field-datetime header em.label {
 	display: none;
 }
@@ -78,7 +82,7 @@
 .field-datetime header em.end.label {
 	top: 42px;
 }
-
+*/
 /* Invalid */
 .field-datetime .frame header .invalid {
 	border-color: #cc3311;
