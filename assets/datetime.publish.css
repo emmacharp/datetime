@@ -114,11 +114,11 @@
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
-	border-radius: 0;
+	border-radius: inherit;
 }
 
 .field-datetime .frame.single li {
-	border-radius: 0;
+	border-radius: inherit;
 	border: none;
 }
 
